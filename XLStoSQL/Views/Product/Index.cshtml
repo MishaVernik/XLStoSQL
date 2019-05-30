@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ 
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    @using (Html.BeginForm("Import", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <br />
+        @Html.Raw(ViewBag.Error)
+        <br />
+        <span>Select File:</span><br />
+        <input type="file" name="postedFile" class="btn btn-default" />
+        <hr />
+        <input type="submit" value="Import" class="btn btn-default" />
+        <br />
+
+    }
+</body>
+</html>

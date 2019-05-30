@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FinanceInfoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Finance_DB">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Trans" Type="float" />
+          <Property Name="Type" Type="nvarchar(max)" />
+          <Property Name="Date" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Memo" Type="nvarchar(max)" />
+          <Property Name="Account" Type="nvarchar(max)" />
+          <Property Name="Debit" Type="float" />
+          <Property Name="Credit" Type="float" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'FinanceInfo.dbo.FinanceDB' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="FinanceDB">
+          <Property Name="ID" Type="int" />
+          <Property Name="Trans" Type="float" />
+          <Property Name="Type" Type="nvarchar(max)" />
+          <Property Name="Date" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Memo" Type="nvarchar(max)" />
+          <Property Name="Account" Type="nvarchar(max)" />
+          <Property Name="Debit" Type="float" />
+          <Property Name="Credit" Type="float" />
+        </EntityType>-->
+        <EntityContainer Name="FinanceInfoModelStoreContainer">
+          <EntitySet Name="Finance_DB" EntityType="Self.Finance_DB" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FinanceInfoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="FinanceInfoDBEntities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="Finance_DB" EntityType="FinanceInfoModel.Finance_DB" />
+        </EntityContainer>
+        <EntityType Name="Finance_DB">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Trans" Type="Double" />
+          <Property Name="Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Account" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Debit" Type="Double" />
+          <Property Name="Credit" Type="Double" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FinanceInfoModelStoreContainer" CdmEntityContainer="FinanceInfoDBEntities" >
+          <EntitySetMapping Name="Finance_DB">
+            <EntityTypeMapping TypeName="FinanceInfoModel.Finance_DB">
+              <MappingFragment StoreEntitySet="Finance_DB">
+                <ScalarProperty Name="Credit" ColumnName="Credit" />
+                <ScalarProperty Name="Debit" ColumnName="Debit" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Trans" ColumnName="Trans" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

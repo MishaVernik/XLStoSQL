@@ -1,0 +1,83 @@
+﻿@model XLStoSQL.Models.Finance_DB
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Finance_DB</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Trans)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Trans)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Memo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Memo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Account)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Account)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Debit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Debit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Credit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Credit)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

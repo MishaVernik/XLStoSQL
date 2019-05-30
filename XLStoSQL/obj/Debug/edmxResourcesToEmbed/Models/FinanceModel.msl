@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FinanceInfoModelStoreContainer" CdmEntityContainer="FinanceInfoDBEntities">
+    <EntitySetMapping Name="Finance_DB">
+      <EntityTypeMapping TypeName="FinanceInfoModel.Finance_DB">
+        <MappingFragment StoreEntitySet="Finance_DB">
+          <ScalarProperty Name="Credit" ColumnName="Credit" />
+          <ScalarProperty Name="Debit" ColumnName="Debit" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Trans" ColumnName="Trans" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
